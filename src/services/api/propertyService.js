@@ -212,8 +212,8 @@ class PropertyService {
     try {
       // Filter to only include updateable fields
       const filteredData = {};
-      this.updateableFields.forEach(field => {
-        if (propertyData.hasOwnProperty(field)) {
+this.updateableFields.forEach(field => {
+        if (Object.prototype.hasOwnProperty.call(propertyData, field)) {
           filteredData[field] = propertyData[field];
         }
       });
@@ -270,8 +270,8 @@ class PropertyService {
     try {
       // Filter to only include updateable fields
       const filteredData = { Id: parseInt(id) };
-      this.updateableFields.forEach(field => {
-        if (propertyData.hasOwnProperty(field)) {
+this.updateableFields.forEach(field => {
+        if (Object.prototype.hasOwnProperty.call(propertyData, field)) {
           filteredData[field] = propertyData[field];
         }
       });
