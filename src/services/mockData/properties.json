@@ -1,0 +1,116 @@
+[
+  {
+    "Id": 1,
+    "title": "Casa Colonial en Centro Histórico",
+    "price": 4500000,
+    "location": "Centro Histórico, Ciudad de México",
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "sqft": 280,
+    "type": "casa",
+    "images": [
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=800&h=600&fit=crop&crop=center"
+    ],
+    "description": "Hermosa casa colonial completamente restaurada en el corazón del Centro Histórico. Cuenta con acabados de lujo, techos altos y un patio interior tradicional.",
+    "features": ["Patio interior", "Techos altos", "Arquitectura colonial", "Ubicación céntrica", "Restaurada completamente"],
+    "status": "available",
+    "createdAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "Id": 2,
+    "title": "Departamento Moderno en Polanco",
+    "price": 8200000,
+    "location": "Polanco, Ciudad de México",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "sqft": 180,
+    "type": "departamento",
+    "images": [
+      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1600566752734-696d4479c55d?w=800&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&h=600&fit=crop&crop=center"
+    ],
+    "description": "Lujoso departamento en uno de los edificios más exclusivos de Polanco. Vista panorámica de la ciudad, acabados premium y amenidades de clase mundial.",
+    "features": ["Vista panorámica", "Amenidades premium", "Seguridad 24/7", "Gimnasio", "Roof garden"],
+    "status": "available",
+    "createdAt": "2024-01-20T14:30:00Z"
+  },
+  {
+    "Id": 3,
+    "title": "Villa Frente al Mar en Cancún",
+    "price": 12500000,
+    "location": "Zona Hotelera, Cancún",
+    "bedrooms": 5,
+    "bathrooms": 4,
+    "sqft": 420,
+    "type": "casa",
+    "images": [
+      "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=800&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1600047509782-20d39509f31b?w=800&h=600&fit=crop&crop=center"
+    ],
+    "description": "Espectacular villa con acceso directo a la playa. Diseño contemporáneo, piscina infinity y vistas inigualables al mar Caribe.",
+    "features": ["Frente al mar", "Piscina infinity", "Acceso directo a playa", "Diseño contemporáneo", "Vista al mar Caribe"],
+    "status": "pending",
+    "createdAt": "2024-01-25T09:15:00Z"
+  },
+  {
+    "Id": 4,
+    "title": "Condominio en Puerto Vallarta",
+    "price": 6800000,
+    "location": "Zona Romántica, Puerto Vallarta",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "sqft": 150,
+    "type": "condominio",
+    "images": [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?w=800&h=600&fit=crop&crop=center"
+    ],
+    "description": "Elegante condominio en la exclusiva Zona Romántica. Terraza con vista al océano, acabados de mármol y club de playa privado.",
+    "features": ["Vista al océano", "Club de playa", "Acabados de mármol", "Terraza privada", "Zona exclusiva"],
+    "status": "available",
+    "createdAt": "2024-02-01T16:45:00Z"
+  },
+  {
+    "Id": 5,
+    "title": "Casa Familiar en Guadalajara",
+    "price": 3200000,
+    "location": "Providencia, Guadalajara",
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "sqft": 320,
+    "type": "casa",
+    "images": [
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=800&h=600&fit=crop&crop=center"
+    ],
+    "description": "Amplia casa familiar en una de las mejores colonias de Guadalajara. Jardín privado, cochera para dos autos y excelente ubicación.",
+    "features": ["Jardín privado", "Cochera doble", "Zona residencial", "Cerca de escuelas", "Espacio familiar"],
+    "status": "sold",
+    "createdAt": "2024-02-05T11:20:00Z"
+  },
+  {
+    "Id": 6,
+    "title": "Penthouse en Monterrey",
+    "price": 9500000,
+    "location": "San Pedro, Monterrey",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "sqft": 250,
+    "type": "departamento",
+    "images": [
+      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1600566752734-696d4479c55d?w=800&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&h=600&fit=crop&crop=center"
+    ],
+    "description": "Exclusivo penthouse con terraza de 100m². Vista panorámica a la Sierra Madre, acabados de lujo y ubicación privilegiada en San Pedro.",
+    "features": ["Terraza amplia", "Vista a la sierra", "Acabados de lujo", "Ubicación premium", "Exclusivo penthouse"],
+    "status": "available",
+    "createdAt": "2024-02-10T13:30:00Z"
+  }
+]

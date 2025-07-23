@@ -1,0 +1,52 @@
+[
+  {
+    "Id": 1,
+    "name": "María García López",
+    "email": "maria.garcia@email.com",
+    "phone": "+52 55 1234 5678",
+    "leadStatus": "hot",
+    "interestedIn": ["Casa Colonial en Centro Histórico", "Departamento Moderno en Polanco"],
+    "notes": "Interesada en propiedades en CDMX, presupuesto hasta 5M. Busca mudarse en los próximos 3 meses.",
+    "lastContact": "2024-02-15T10:30:00Z"
+  },
+  {
+    "Id": 2,
+    "name": "Carlos Rodríguez Mendez",
+    "email": "carlos.rodriguez@email.com",
+    "phone": "+52 33 2345 6789",
+    "leadStatus": "warm",
+    "interestedIn": ["Casa Familiar en Guadalajara"],
+    "notes": "Familia con dos hijos, busca casa en zona residencial de Guadalajara. Muy interesado en la propiedad de Providencia.",
+    "lastContact": "2024-02-14T15:45:00Z"
+  },
+  {
+    "Id": 3,
+    "name": "Ana Sofía Hernández",
+    "email": "ana.hernandez@email.com",
+    "phone": "+52 998 3456 7890",
+    "leadStatus": "cold",
+    "interestedIn": ["Villa Frente al Mar en Cancún"],
+    "notes": "Inversionista extranjera, evaluando propiedades de lujo en la Riviera Maya. Proceso de decisión largo.",
+    "lastContact": "2024-02-10T09:15:00Z"
+  },
+  {
+    "Id": 4,
+    "name": "Roberto Silva Castro",
+    "email": "roberto.silva@email.com",
+    "phone": "+52 81 4567 8901",
+    "leadStatus": "hot",
+    "interestedIn": ["Penthouse en Monterrey"],
+    "notes": "Empresario local, muy interesado en el penthouse de San Pedro. Listo para hacer oferta si las condiciones son adecuadas.",
+    "lastContact": "2024-02-16T14:20:00Z"
+  },
+  {
+    "Id": 5,
+    "name": "Laura Jiménez Vega",
+    "email": "laura.jimenez@email.com",
+    "phone": "+52 322 5678 9012",
+    "leadStatus": "warm",
+    "interestedIn": ["Condominio en Puerto Vallarta"],
+    "notes": "Jubilada estadounidense, busca propiedad de retiro en Puerto Vallarta. Prefiere condominios con servicios incluidos.",
+    "lastContact": "2024-02-13T11:30:00Z"
+  }
+]
