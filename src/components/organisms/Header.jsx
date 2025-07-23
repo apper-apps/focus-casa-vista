@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+import LogoutButton from "@/components/organisms/LogoutButton";
 import ApperIcon from "@/components/ApperIcon";
 import Button from "@/components/atoms/Button";
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const location = useLocation();
-
   const navigation = [
     { name: "Inicio", href: "/", icon: "Home" },
     { name: "Propiedades", href: "/properties", icon: "Building" },
@@ -70,7 +71,7 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Admin Toggle & Mobile Menu Button */}
+{/* Admin Toggle & Mobile Menu Button */}
           <div className="flex items-center space-x-4">
             <Button
               variant={isAdmin ? "primary" : "outline"}
@@ -81,13 +82,17 @@ const Header = () => {
               <ApperIcon name="Shield" size={16} className="mr-2" />
               {isAdmin ? "Admin" : "Usuario"}
             </Button>
-
+            <Button variant="outline" size="sm">
+              <ApperIcon name="Phone" size={16} className="mr-2" />
+              Contacto
+            </Button>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 text-secondary-700 hover:text-primary-600"
+              className="md:hidden p-2 rounded-lg text-secondary-600 hover:text-primary-600 hover:bg-secondary-50"
             >
-              <ApperIcon name={isMobileMenuOpen ? "X" : "Menu"} size={24} />
+              <ApperIcon name={isMobileMenuOpen ? "X" : "Menu"} size={20} />
             </button>
+            <LogoutButton />
           </div>
         </div>
 
@@ -126,16 +131,15 @@ const Header = () => {
                       ? "bg-primary-50 text-primary-600"
                       : "text-secondary-700 hover:bg-secondary-50"
                   }`}
-                >
+>
                   <ApperIcon name={item.icon} size={16} className="mr-3" />
                   {item.name}
                 </Link>
               ))}
               
-              <div className="pt-2">
+              <div className="pt-4 space-y-2 border-t border-secondary-200">
                 <Button
                   variant={isAdmin ? "primary" : "outline"}
-                  size="sm"
                   onClick={() => {
                     setIsAdmin(!isAdmin);
                     setIsMobileMenuOpen(false);
@@ -145,6 +149,13 @@ const Header = () => {
                   <ApperIcon name="Shield" size={16} className="mr-2" />
                   {isAdmin ? "Modo Admin" : "Modo Usuario"}
                 </Button>
+                <Button variant="outline" className="w-full">
+                  <ApperIcon name="Phone" size={16} className="mr-2" />
+                  Contacto
+                </Button>
+                <div className="w-full">
+                  <LogoutButton />
+                </div>
               </div>
             </div>
           </motion.div>

@@ -128,12 +128,12 @@ const CRM = () => {
     }
   };
 
-  const handleEdit = (contact) => {
+const handleEdit = (contact) => {
     setFormData({
-      name: contact.name,
+      name: contact.Name,
       email: contact.email,
       phone: contact.phone,
-      leadStatus: contact.leadStatus,
+      leadStatus: contact.lead_status,
       notes: contact.notes
     });
     setEditingContact(contact);
@@ -152,7 +152,7 @@ const CRM = () => {
     }
   };
 
-  const getStatusBadge = (status) => {
+const getStatusBadge = (status) => {
     const statusMap = {
       hot: "error",
       warm: "warning", 
@@ -161,7 +161,7 @@ const CRM = () => {
     return statusMap[status] || "default";
   };
 
-  const getStatusColor = (status) => {
+const getStatusColor = (status) => {
     const colorMap = {
       hot: "bg-error",
       warm: "bg-warning",
@@ -355,13 +355,13 @@ const CRM = () => {
                       className="hover:bg-secondary-50"
                     >
                       <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="flex items-center">
-                          <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-semibold mr-4 ${getStatusColor(contact.leadStatus)}`}>
-                            {contact.name.charAt(0).toUpperCase()}
+<div className="flex items-center">
+                          <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-semibold mr-4 ${getStatusColor(contact.lead_status)}`}>
+                            {contact.Name?.charAt(0).toUpperCase()}
                           </div>
                           <div>
                             <div className="text-sm font-medium text-secondary-900">
-                              {contact.name}
+                              {contact.Name}
                             </div>
                             <div className="text-sm text-secondary-500">
                               {contact.email}
@@ -372,16 +372,16 @@ const CRM = () => {
                           </div>
                         </div>
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <Badge variant={getStatusBadge(contact.leadStatus)}>
-                          {contact.leadStatus === "hot" && "🔥 Caliente"}
-                          {contact.leadStatus === "warm" && "🌡️ Tibio"}
-                          {contact.leadStatus === "cold" && "❄️ Frío"}
+<td className="px-6 py-4 whitespace-nowrap">
+                        <Badge variant={getStatusBadge(contact.lead_status)}>
+                          {contact.lead_status === "hot" && "🔥 Caliente"}
+                          {contact.lead_status === "warm" && "🌡️ Tibio"}
+                          {contact.lead_status === "cold" && "❄️ Frío"}
                         </Badge>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="text-sm text-secondary-900">
-                          {format(new Date(contact.lastContact), "dd MMM yyyy", { locale: es })}
+<div className="text-sm text-secondary-900">
+                          {format(new Date(contact.last_contact), "dd MMM yyyy", { locale: es })}
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
