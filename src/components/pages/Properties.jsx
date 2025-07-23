@@ -1,26 +1,28 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import SearchBar from "@/components/molecules/SearchBar";
-import PropertyGrid from "@/components/organisms/PropertyGrid";
-import Loading from "@/components/ui/Loading";
-import Error from "@/components/ui/Error";
-import Empty from "@/components/ui/Empty";
+import NeighborhoodCard from "@/components/molecules/NeighborhoodCard";
 import ApperIcon from "@/components/ApperIcon";
-import Button from "@/components/atoms/Button";
+import Empty from "@/components/ui/Empty";
+import Error from "@/components/ui/Error";
+import Loading from "@/components/ui/Loading";
+import PropertyGrid from "@/components/organisms/PropertyGrid";
+import SearchBar from "@/components/molecules/SearchBar";
 import Select from "@/components/atoms/Select";
+import Button from "@/components/atoms/Button";
 import propertyService from "@/services/api/propertyService";
-
 const Properties = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [properties, setProperties] = useState([]);
+const [properties, setProperties] = useState([]);
   const [filteredProperties, setFilteredProperties] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [viewMode, setViewMode] = useState("grid");
   const [sortBy, setSortBy] = useState("newest");
-  
+  const [selectedNeighborhood, setSelectedNeighborhood] = useState(null);
+  const [neighborhoodData, setNeighborhoodData] = useState(null);
+  const [loadingNeighborhood, setLoadingNeighborhood] = useState(false);
   // Initialize filters from navigation state or empty
   const [currentFilters, setCurrentFilters] = useState(
     location.state?.filters || {}
@@ -114,8 +116,27 @@ const Properties = () => {
     setCurrentFilters({});
   };
 
-  const handleViewProperty = (property) => {
-    navigate(`/properties/${property.Id}`);
+const handleViewProperty = async (property, action = 'details') => {
+    if (action === 'neighborhood') {
+      try {
+        setLoadingNeighborhood(true);
+        const neighborhoodInfo = await propertyService.getNeighborhoodInfo(property.Id);
+        setNeighborhoodData(neighborhoodInfo);
+        setSelectedNeighborhood(property);
+        toast.success("Información del vecindario cargada");
+      } catch (err) {
+        toast.error("Error al cargar información del vecindario");
+      } finally {
+        setLoadingNeighborhood(false);
+      }
+    } else {
+      navigate(`/properties/${property.Id}`);
+    }
+  };
+
+  const handleCloseNeighborhood = () => {
+    setSelectedNeighborhood(null);
+    setNeighborhoodData(null);
   };
 
   const hasActiveFilters = () => {
@@ -261,8 +282,26 @@ const Properties = () => {
           <div className="text-center mt-12">
             <Button variant="outline" size="lg">
               <ApperIcon name="MoreHorizontal" size={20} className="mr-2" />
-              Cargar más propiedades
+Cargar más propiedades
             </Button>
+          </div>
+        )}
+
+        {/* Neighborhood Modal */}
+        {selectedNeighborhood && neighborhoodData && (
+          <NeighborhoodCard
+            neighborhood={neighborhoodData}
+            onClose={handleCloseNeighborhood}
+          />
+        )}
+
+        {/* Loading Neighborhood Overlay */}
+        {loadingNeighborhood && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div className="bg-white rounded-xl p-6 flex items-center">
+              <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-primary-500 mr-3"></div>
+              <span className="text-secondary-700">Cargando información del vecindario...</span>
+            </div>
           </div>
         )}
       </div>

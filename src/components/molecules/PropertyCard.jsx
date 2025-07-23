@@ -64,18 +64,34 @@ const PropertyCard = ({ property, onViewDetails }) => {
             <ApperIcon name="Square" size={16} className="mr-1" />
             <span className="text-sm">{property.sqft} m²</span>
           </div>
-        </div>
+</div>
         
-        <Button 
-          variant="primary" 
-          className="w-full"
-          onClick={(e) => {
-            e.stopPropagation();
-            onViewDetails && onViewDetails(property);
-          }}
-        >
-          Ver Detalles
-        </Button>
+        <div className="space-y-3">
+          <Button 
+            variant="primary" 
+            className="w-full"
+            onClick={(e) => {
+              e.stopPropagation();
+              onViewDetails && onViewDetails(property);
+            }}
+          >
+            Ver Detalles
+          </Button>
+          
+          {property.neighborhood && (
+            <Button 
+              variant="outline" 
+              className="w-full"
+              onClick={(e) => {
+                e.stopPropagation();
+                onViewDetails && onViewDetails(property, 'neighborhood');
+              }}
+            >
+              <ApperIcon name="MapPin" size={16} className="mr-2" />
+              Ver Vecindario
+            </Button>
+          )}
+        </div>
       </div>
     </motion.div>
   );

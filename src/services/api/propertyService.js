@@ -1,3 +1,5 @@
+import React from "react";
+import Error from "@/components/ui/Error";
 import propertiesData from "@/services/mockData/properties.json";
 
 class PropertyService {
@@ -115,7 +117,7 @@ class PropertyService {
   async getStats() {
     await new Promise(resolve => setTimeout(resolve, 200));
     
-    return {
+return {
       total: this.properties.length,
       available: this.properties.filter(p => p.status === "available").length,
       sold: this.properties.filter(p => p.status === "sold").length,
@@ -123,6 +125,15 @@ class PropertyService {
       averagePrice: this.properties.reduce((sum, p) => sum + p.price, 0) / this.properties.length
     };
   }
-}
 
-export default new PropertyService();
+  async getNeighborhoodInfo(id) {
+    await new Promise(resolve => setTimeout(resolve, 250));
+    
+    const property = this.properties.find(p => p.Id === parseInt(id));
+    if (!property || !property.neighborhood) {
+      throw new Error("Neighborhood information not found");
+    }
+    
+    return { ...property.neighborhood };
+  }
+}
